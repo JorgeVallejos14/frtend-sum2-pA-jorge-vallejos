@@ -1,0 +1,158 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    text-align: center;
+    margin: 1rem 0;
+    color: #007BFF;
+}
+
+form {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Secciones del formulario */
+section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #f1f1f1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    margin-bottom: 1rem;
+    color: #333;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 0.5rem;
+}
+
+/* Campos del formulario */
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+label span {
+    color: red; /* Asterisco para campos requeridos */
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Estilo para campos al recibir el foco */
+input:focus, select:focus, textarea:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+/* Clases para validación */
+.campo-error {
+    border-color: red;
+}
+
+.campo-ok {
+    border-color: green;
+}
+
+/* Fieldsets y legends */
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+legend {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+/* Botones */
+button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+button[type="reset"] {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+button[type="reset"]:hover {
+    background-color: #e0e0e0;
+}
+
+/* Enlace "Volver al Inicio" */
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Diseño responsivo */
+@media (min-width: 768px) {
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    label, input, select, textarea, button {
+        grid-column: span 2;
+    }
+
+    input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select {
+        grid-column: span 1;
+    }
+
+    textarea {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 767px) {
+    form {
+        display: block;
+    }
+
+    input, select, textarea, button {
+        width: 100%;
+    }
+}
