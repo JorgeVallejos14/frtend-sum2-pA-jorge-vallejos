@@ -1,3 +1,117 @@
 Necesito que la barra navegación lleve el nombre ("ViajarYa") o logo de la agencia, con links de navegación: inicio, destinos, paquetes, nosotros y reservar, el link de reservar debe apuntar a reserva.html (pagina que se creara en la etapa 2) y que la sección hero (encabezado principal) lleve imagen de fondo relacionada con viajes o turismo, el titulo principal con el nombre de la agencia (etiqueta h1), slogan o frase que motive al visitante y un buscador visual con campos de destino, fecha de salida y cantidad de pasajeros, mas un boton "Buscar". Ojo en esta etapa el buscador es solo visual y no necesita funcionar; el boton puede redigir a reserva.html
 
 En sección de destinos destacados mostrar minimo cuatros destinos en formato de tarjetas. cada tarjeta debe incluir: imagen del destino, nombre del destino, descripcion breve de dos a tres oraciones, precio referencial (por ejemplo: "Desde USD 890"), boton "Ver paquetes" (puede ser decorativo en esta etapa), las tarjetas deben organizarse en una grilla de al menos dos columnas en pantallas de escritorio, usando CSS Grid o Flexbox, también necesito que en la sección de tipos de paquetes/servicios mostrar un minimo de cuatro tipos de servicios que ofrece la agencia. Ejemplos sugeridos: Paquetes todo incluido, cruceros, viajes de egresados, turismo de aventura, cada servicio debe mostrar un icono o imagen, un titulo y una descripcion breve, en la sección de testimonios minimo tres testimonios de clientes y cada testimonio debe incluir nombre del cliente, texto del comentario y calificación (puede representarse con caracteres o texto), en la seccion por que elegirnos minimo tres argumentos destacados: experiencia, atencion personalizada, mejores precios u otros y para finalizar en el footer debe estar el nombre de la agencia y slogan, links de navegacion rapida, datos de contacto ficticios: email, telefono y WhatsApp, links a redes sociales (pueden ser placeholders) y año de copyright.
+
+en Requisitos de estilo la paleta de colores debe ser coherentes con la tematica de turismo. definir al menos tres colores como variables CSS (celeste--color-principal, --color secundario, --color-acento). A mi me gustaria que el color principal sea celeste y que el color de letras sea visible y claro, minimo dos tipografias: una para titulos y otra para el cuerpo de texto. Pueden usarse tipografias de google fonts, las tarjetas de destinos y servicios deben tener efecto visual al pasar el cursor (hover) con transicion suave, el hero debe incluir una superposicion semitransparente sobre la imagen para garantizar la legibilidad de texto y el sitio debe tambien adapatarse a pantaññas moviles: OJO solo en dispositivos chicos los elementos deben apilarse en una sola columna.
+
+En la seccion A - Datos del Viaje necesito destino de interes (select con minimo doce destinos agrupados por region: America del sur, europa, asia, caribe, otros), el tipo de paquete (radio buttons: todo incluido, solo aereo mas hotel, crucero, viaje de egresados, A medida), fecha de salida deseada (input date, requerido), fecha de regreso deseada (input date, requerido), duracion aproximada (select: 3 a 5 dias, 1 semana, 2 semanas, mas de 2 semanas), flexibidad de fechas (checkbox: "Mis fechas son flexibles mas o menos 3 dias) y puerto de salida preferido (select: buenos aires, cordoba, rosario, otro). Si el usuario selecciona "Otro", debe aparecer un campo de texto adicional para especificar la ciudad y en la sección B - Datos de los pasajeros debe de haber cantidad de adultos (input number, minimo 1, maximo 10), cantidad de menores (input number, minimo 0, maximo 8), viaja con adultos mayores (checkbox, con campo numerico condicional para indicar la cantidad), datos del pasajero principal: nombre completo (input text, requerido), numnero de pasaporte o DNI (input text, requerido), fecha de nacimiento (input date, requerido), nacionalidad (select, requerido), correo electronico (input email, requerido), telefono de contacto (input tel, requerido) y necesidades especiales (checkbox). Si esta marcado, mostrar un textarea para que el pasajero las detalle.
+
+En la seccion C - preferencias y servicios adicionales: debe de tener tipo de habitacion preferida (radio buttons: simple, doble, triple, suite), regimen de comidas (select: solo alojamiento, desayuno incluido, media pension, pension completa, todo incluido), servicios adicionales (checkboxs multiples): Seguro de viaje, traslado aeropuerto, excursiones incluidas, guia en español, visa incluida, presupuesto estimado por personas (select: menos de USD 500, USD 500 a 1000, USD 1000 A 2500, USD 2500 a 5000, sin limites defiido) y como se entero de viajarYa (select: redes sociales, recomendacion, busqueda web, publicidad, ya soy cliente), en la seccion D comentarios y confirmación: campo de comentarios o pedidos especiales (textarea, maximo 300 caracteres, con contador de caracteres visibles), desea recibir ofertas por correo electronico (checkbox), acepto los términos y condiciones (checkbox obligatorio, con enlace a pagina fictica) y acepto la política de privacidad y el tratamiento de datos personales (checkbox obligatorio) y para finalizar en botones de accion el botón principal "solicitar reserva" (submit), centrado y con estilo destacado, botón secundario "limpiar" (reset) y enlace "volver al inicio" que redirija a index.html
+
+En requisitos de estilo y accesibilidad pido que:
+- Los campos deben cambiar visualmente al recibir el foco (propiedad :focus): borde con
+color y sombra suave.
+- Preparar las clases CSS "campo-error" (borde rojo) y "campo-ok" (borde verde) para ser
+aplicadas en la Etapa 3.
+- Las cuatro secciones del formulario deben estar visualmente separadas mediante fondo
+diferente, borde redondeado o linea divisoria con titulo.
+- El formulario debe estar centrado con un ancho maximo de 750 pixeles.
+Evaluacion Sumativa 2 | Desarrollo Web HTML & JS Agencia de Turismo ViajarYa
+Programacion Web | Pagina 8
+- Diseno responsivo: en pantallas de escritorio algunos campos pueden mostrarse en dos
+columnas; en dispositivos moviles todos los campos ocupan el ancho completo.
+- Todos los campos deben tener su etiqueta <label> asociada correctamente mediante los
+atributos for e id. Los campos requeridos deben estar marcados con asterisco en la
+etiqueta.
+- Los grupos de radio buttons y checkboxes deben estar contenidos dentro de un elemento
+<fieldset> con su correspondiente <legend>.
+
+necesito que aquí pido que:
+Seccion A — Datos del Viaje
+Campo Regla
+Destino Debe seleccionarse una opcion valida (no el placeholder).
+Tipo de paquete Al menos una opcion de radio button debe estar seleccionada.
+Fecha de salida No puede ser en el pasado. Debe ser al menos 7 dias a partir de la
+fecha actual.
+Fecha de regreso Debe ser estrictamente posterior a la fecha de salida.
+Duracion Seleccion obligatoria.
+Ciudad de salida ("Otro") Si se selecciono "Otro" en el puerto de salida, el campo de texto no
+puede estar vacio.
+
+Seccion B — Datos de los Pasajeros
+Campo Regla
+Cantidad de adultos Minimo 1, maximo 10. Solo numeros enteros.
+Evaluacion Sumativa 2 | Desarrollo Web HTML & JS Agencia de Turismo ViajarYa
+Programacion Web | Pagina 10
+Cantidad de menores Minimo 0, maximo 8. No puede superar el doble de la cantidad de
+adultos.
+Nombre completo Solo letras y espacios. Minimo 5 caracteres, maximo 80.
+Pasaporte o DNI Alfanumerico, entre 7 y 12 caracteres.
+Fecha de nacimiento El pasajero principal debe ser mayor de 18 anos al momento del
+envio.
+Correo electronico Formato valido con @ y dominio. Usar expresion regular.
+Telefono Solo digitos, guiones, espacios y el signo mas (+). Minimo 8 digitos
+numericos.
+Necesidades especiales Si el checkbox esta marcado, el textarea no puede estar vacio.
+
+Seccion C — Preferencias
+Campo Regla
+Tipo de habitacion Debe seleccionarse una opcion.
+Regimen de comidas Seleccion obligatoria.
+Presupuesto estimado Seleccion obligatoria.
+Seccion D — Confirmacion
+- El textarea de comentarios no debe superar los 300 caracteres. Validar tambien al
+momento del envio, ademas del contador en tiempo real.
+- Ambos checkboxes de terminos y condiciones y politica de privacidad son obligatorios. Si
+alguno falta, mostrar un mensaje de error especifico para cada uno.
+
+Comportamiento de la Interfaz
+Retroalimentacion Visual por Campo
+- Al detectar un error: agregar la clase "campo-error" al campo correspondiente (borde rojo).
+- Mostrar un mensaje de error descriptivo debajo del campo. Este mensaje debe generarse
+con JavaScript, no estar escrito directamente en el HTML.
+- Al corregir el error (eventos input o change): remover la clase "campo-error" y agregar la
+clase "campo-ok" (borde verde).
+- Los mensajes de error deben desaparecer cuando el usuario corrige el campo.
+Funcionalidades en Tiempo Real
+- Contador de caracteres del textarea: actualizar en tiempo real con el formato "X / 300
+caracteres". Cambiar el color del contador a naranja cuando se supere el 80% del limite, y a
+rojo cuando se alcance el limite maximo.
+- Al modificar la fecha de salida, verificar automaticamente si la fecha de regreso sigue
+siendo valida y mostrar error si corresponde.
+Evaluacion Sumativa 2 | Desarrollo Web HTML & JS Agencia de Turismo ViajarYa
+Programacion Web | Pagina 11
+- El campo de ciudad de salida debe mostrarse u ocultarse segun la opcion elegida en el
+select de puerto de salida.
+Comportamiento al Enviar el Formulario
+- Usar preventDefault() para impedir el envio si hay errores.
+- Recorrer todos los campos y aplicar las validaciones en orden.
+- Al detectar errores, hacer scroll automatico al primer campo con error usando
+scrollIntoView().
+- Mostrar un mensaje de resumen al inicio del formulario indicando cuantos campos tienen
+errores (por ejemplo: "Se encontraron 3 campos con errores. Por favor corregalos antes de
+continuar.").
+Pantalla de Confirmacion
+Si el formulario pasa todas las validaciones:
+- Ocultar el formulario.
+- Mostrar una seccion de confirmacion con: mensaje personalizado que incluya el nombre del
+pasajero y el destino seleccionado, fechas del viaje, cantidad de pasajeros, tipo de paquete
+y numero de solicitud generado aleatoriamente con Math.random().
+- Incluir un boton "Volver al inicio" y un boton "Hacer otra reserva" que recargue el formulario.
+
+Conceptos de JavaScript Involucrados
+Concepto Aplicacion en el proyecto
+Seleccion de elementos del DOM getElementById, querySelector, querySelectorAll
+Manejo de eventos addEventListener para submit, input, change y blur
+preventDefault() Bloquear el envio del formulario cuando hay errores
+Expresiones regulares (RegEx) Validar correo electronico, nombre, DNI o pasaporte y
+telefono
+Manipulacion de clases CSS classList.add, classList.remove, classList.toggle
+Creacion dinamica de elementos createElement, textContent, appendChild y removeChild
+Trabajo con fechas new Date(), comparacion de fechas y calculo de diferencia en
+dias
+Condicionales y bucles Validar multiples campos con forEach o for
+Visibilidad condicional style.display para mostrar u ocultar secciones segun el estado
+Numeros aleatorios Math.random() y Math.floor() para generar el numero de
+solicitud
+scrollIntoView() Desplazar la vista automaticamente al primer campo con error
