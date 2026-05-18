@@ -20,6 +20,12 @@
             const detallesNecesidades = document.getElementById('detalles-necesidades');
             detallesNecesidades.style.display = checkbox.checked ? 'block' : 'none';
         }
+
+        function actualizarContador() {
+            const comentarios = document.getElementById('comentarios');
+            const contador = document.getElementById('contador');
+            contador.textContent = `${comentarios.value.length}/300`;
+        }
     </script>
 </head>
 <body>
@@ -77,13 +83,13 @@
             <label><input type="checkbox" name="flexibilidad"> Mis fechas son flexibles más o menos 3 días</label>
 
             <label for="puerto-salida">Puerto de Salida Preferido:</label>
-            <select id="puerto-salida" name="puerto-salida" onchange="toggleOtroDestino(this)" required>
+            <select id="puerto-salida" name="puerto-salida" required>
                 <option value="buenos-aires">Buenos Aires</option>
                 <option value="cordoba">Córdoba</option>
                 <option value="rosario">Rosario</option>
                 <option value="otro">Otro</option>
             </select>
-            <input type="text" id="otro-destino" name="otro-puerto" placeholder="Especificar ciudad" style="display: none;">
+            <input type="text" id="otro-puerto" name="otro-puerto" placeholder="Especificar ciudad" style="display: none;">
         </form>
     </section>
 
@@ -126,6 +132,74 @@
 
             <label><input type="checkbox" name="necesidades-especiales" onchange="toggleNecesidadesEspeciales(this)"> Necesidades Especiales</label>
             <textarea id="detalles-necesidades" name="detalles-necesidades" placeholder="Detalle sus necesidades" style="display: none;"></textarea>
+        </form>
+    </section>
+
+    <!-- Sección C - Preferencias y Servicios Adicionales -->
+    <section>
+        <h2>C - Preferencias y Servicios Adicionales</h2>
+        <form>
+            <p>Tipo de Habitación Preferida:</p>
+            <label><input type="radio" name="habitacion" value="simple" required> Simple</label>
+            <label><input type="radio" name="habitacion" value="doble"> Doble</label>
+            <label><input type="radio" name="habitacion" value="triple"> Triple</label>
+            <label><input type="radio" name="habitacion" value="suite"> Suite</label>
+
+            <label for="regimen-comidas">Régimen de Comidas:</label>
+            <select id="regimen-comidas" name="regimen-comidas" required>
+                <option value="solo-alojamiento">Solo Alojamiento</option>
+                <option value="desayuno-incluido">Desayuno Incluido</option>
+                <option value="media-pension">Media Pensión</option>
+                <option value="pension-completa">Pensión Completa</option>
+                <option value="todo-incluido">Todo Incluido</option>
+            </select>
+
+            <p>Servicios Adicionales:</p>
+            <label><input type="checkbox" name="servicios" value="seguro-viaje"> Seguro de Viaje</label>
+            <label><input type="checkbox" name="servicios" value="traslado-aeropuerto"> Traslado Aeropuerto</label>
+            <label><input type="checkbox" name="servicios" value="excursiones-incluidas"> Excursiones Incluidas</label>
+            <label><input type="checkbox" name="servicios" value="guia-espanol"> Guía en Español</label>
+            <label><input type="checkbox" name="servicios" value="visa-incluida"> Visa Incluida</label>
+
+            <label for="presupuesto">Presupuesto Estimado por Persona:</label>
+            <select id="presupuesto" name="presupuesto" required>
+                <option value="menos-500">Menos de USD 500</option>
+                <option value="500-1000">USD 500 a 1000</option>
+                <option value="1000-2500">USD 1000 a 2500</option>
+                <option value="2500-5000">USD 2500 a 5000</option>
+                <option value="sin-limites">Sin Límites Definidos</option>
+            </select>
+
+            <label for="como-se-entero">¿Cómo se enteró de ViajarYa?</label>
+            <select id="como-se-entero" name="como-se-entero" required>
+                <option value="redes-sociales">Redes Sociales</option>
+                <option value="recomendacion">Recomendación</option>
+                <option value="busqueda-web">Búsqueda Web</option>
+                <option value="publicidad">Publicidad</option>
+                <option value="cliente">Ya Soy Cliente</option>
+            </select>
+        </form>
+    </section>
+
+    <!-- Sección D - Comentarios y Confirmación -->
+    <section>
+        <h2>D - Comentarios y Confirmación</h2>
+        <form>
+            <label for="comentarios">Comentarios o Pedidos Especiales:</label>
+            <textarea id="comentarios" name="comentarios" maxlength="300" oninput="actualizarContador()"></textarea>
+            <p id="contador">0/300</p>
+
+            <label><input type="checkbox" name="ofertas"> Deseo recibir ofertas por correo electrónico</label>
+
+            <label><input type="checkbox" name="terminos" required> Acepto los <a href="#">términos y condiciones</a></label>
+
+            <label><input type="checkbox" name="privacidad" required> Acepto la <a href="#">política de privacidad</a> y el tratamiento de datos personales</label>
+
+            <div style="text-align: center; margin-top: 1rem;">
+                <button type="submit" style="background-color: #007BFF; color: white; padding: 0.5rem 1rem; border: none; cursor: pointer;">Solicitar Reserva</button>
+                <button type="reset" style="background-color: #f0f0f0; color: #333; padding: 0.5rem 1rem; border: 1px solid #ccc; cursor: pointer;">Limpiar</button>
+                <a href="index.html" style="display: inline-block; margin-top: 1rem; color: #007BFF; text-decoration: none;">Volver al Inicio</a>
+            </div>
         </form>
     </section>
 </body>
