@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ViajarYa</title>
     <style>
-        /* Estilos básicos para la barra de navegación y la sección hero */
+        /* Estilos generales */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -61,6 +61,46 @@
         .search-bar button:hover {
             background-color: #0056b3;
         }
+        .destinos, .servicios, .testimonios, .porque-elegirnos {
+            padding: 2rem;
+            text-align: center;
+        }
+        .destinos h2, .servicios h2, .testimonios h2, .porque-elegirnos h2 {
+            margin-bottom: 1rem;
+        }
+        .destinos .grid, .servicios .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .destinos .card, .servicios .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: left;
+        }
+        .destinos .card img, .servicios .card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .testimonios .testimonial {
+            margin: 1rem 0;
+        }
+        .porque-elegirnos .argumentos {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        footer {
+            background-color: #007BFF;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -92,5 +132,115 @@
             <button onclick="location.href='reserva.html'">Buscar</button>
         </div>
     </section>
+
+    <!-- Sección Destinos Destacados -->
+    <section class="destinos">
+        <h2>Destinos Destacados</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Destino 1">
+                <h3>París</h3>
+                <p>Descubre la ciudad del amor con sus icónicos monumentos y deliciosa gastronomía.</p>
+                <p><strong>Desde USD 890</strong></p>
+                <button>Ver paquetes</button>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Destino 2">
+                <h3>Maldivas</h3>
+                <p>Relájate en playas paradisíacas con aguas cristalinas y arenas blancas.</p>
+                <p><strong>Desde USD 1200</strong></p>
+                <button>Ver paquetes</button>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Destino 3">
+                <h3>Tokio</h3>
+                <p>Explora la vibrante cultura japonesa en una ciudad llena de contrastes.</p>
+                <p><strong>Desde USD 950</strong></p>
+                <button>Ver paquetes</button>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Destino 4">
+                <h3>Roma</h3>
+                <p>Sumérgete en la historia y arte de la ciudad eterna.</p>
+                <p><strong>Desde USD 800</strong></p>
+                <button>Ver paquetes</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section class="servicios">
+        <h2>Tipos de Paquetes/Servicios</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://via.placeholder.com/100" alt="Todo Incluido">
+                <h3>Todo Incluido</h3>
+                <p>Disfruta de tus vacaciones sin preocupaciones con nuestros paquetes todo incluido.</p>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/100" alt="Cruceros">
+                <h3>Cruceros</h3>
+                <p>Explora el mundo desde el mar con nuestras opciones de cruceros.</p>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/100" alt="Egresados">
+                <h3>Viajes de Egresados</h3>
+                <p>Vive una experiencia inolvidable con tus compañeros de clase.</p>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/100" alt="Aventura">
+                <h3>Turismo de Aventura</h3>
+                <p>Descubre destinos emocionantes para los amantes de la aventura.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Testimonios -->
+    <section class="testimonios">
+        <h2>Testimonios</h2>
+        <div class="testimonial">
+            <p>"¡Una experiencia inolvidable! Todo estuvo perfectamente organizado."</p>
+            <p><strong>- Juan Pérez</strong></p>
+            <p>Calificación: ★★★★★</p>
+        </div>
+        <div class="testimonial">
+            <p>"El mejor servicio que he recibido en mis viajes. ¡Recomendado!"</p>
+            <p><strong>- Ana López</strong></p>
+            <p>Calificación: ★★★★☆</p>
+        </div>
+        <div class="testimonial">
+            <p>"Excelentes precios y atención personalizada. ¡Volveré a viajar con ellos!"</p>
+            <p><strong>- Carlos Gómez</strong></p>
+            <p>Calificación: ★★★★★</p>
+        </div>
+    </section>
+
+    <!-- Sección Por Qué Elegirnos -->
+    <section class="porque-elegirnos">
+        <h2>¿Por Qué Elegirnos?</h2>
+        <div class="argumentos">
+            <div>
+                <h3>Experiencia</h3>
+                <p>Más de 10 años organizando viajes inolvidables.</p>
+            </div>
+            <div>
+                <h3>Atención Personalizada</h3>
+                <p>Nos adaptamos a tus necesidades para ofrecerte el mejor servicio.</p>
+            </div>
+            <div>
+                <h3>Mejores Precios</h3>
+                <p>Ofrecemos precios competitivos sin comprometer la calidad.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 ViajarYa - Explora el mundo con nosotros</p>
+        <p>Email: contacto@viajarya.com | Tel: +1 234 567 890 | WhatsApp: +1 234 567 891</p>
+        <p>
+            <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
+        </p>
+    </footer>
 </body>
 </html>
