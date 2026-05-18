@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva - ViajarYa</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script>
+        function toggleOtroDestino(select) {
+            const otroDestinoInput = document.getElementById('otro-destino');
+            otroDestinoInput.style.display = select.value === 'otro' ? 'block' : 'none';
+        }
+
+        function toggleAdultosMayores(checkbox) {
+            const cantidadMayores = document.getElementById('cantidad-mayores');
+            cantidadMayores.style.display = checkbox.checked ? 'block' : 'none';
+        }
+
+        function toggleNecesidadesEspeciales(checkbox) {
+            const detallesNecesidades = document.getElementById('detalles-necesidades');
+            detallesNecesidades.style.display = checkbox.checked ? 'block' : 'none';
+        }
+    </script>
+</head>
+<body>
+    <h1>Formulario de Reserva</h1>
+
+    <!-- Sección A - Datos del Viaje -->
+    <section>
+        <h2>A - Datos del Viaje</h2>
+        <form>
+            <label for="destino">Destino de Interés:</label>
+            <select id="destino" name="destino" onchange="toggleOtroDestino(this)" required>
+                <optgroup label="América del Sur">
+                    <option value="buenos-aires">Buenos Aires</option>
+                    <option value="rio-de-janeiro">Río de Janeiro</option>
+                </optgroup>
+                <optgroup label="Europa">
+                    <option value="paris">París</option>
+                    <option value="roma">Roma</option>
+                </optgroup>
+                <optgroup label="Asia">
+                    <option value="tokio">Tokio</option>
+                    <option value="bangkok">Bangkok</option>
+                </optgroup>
+                <optgroup label="Caribe">
+                    <option value="cancun">Cancún</option>
+                    <option value="punta-cana">Punta Cana</option>
+                </optgroup>
+                <optgroup label="Otros">
+                    <option value="otro">Otro</option>
+                </optgroup>
+            </select>
+            <input type="text" id="otro-destino" name="otro-destino" placeholder="Especificar ciudad" style="display: none;">
+
+            <p>Tipo de Paquete:</p>
+            <label><input type="radio" name="paquete" value="todo-incluido" required> Todo Incluido</label>
+            <label><input type="radio" name="paquete" value="aereo-hotel"> Solo Aéreo + Hotel</label>
+            <label><input type="radio" name="paquete" value="crucero"> Crucero</label>
+            <label><input type="radio" name="paquete" value="egresados"> Viaje de Egresados</label>
+            <label><input type="radio" name="paquete" value="a-medida"> A Medida</label>
+
+            <label for="fecha-salida">Fecha de Salida Deseada:</label>
+            <input type="date" id="fecha-salida" name="fecha-salida" required>
+
+            <label for="fecha-regreso">Fecha de Regreso Deseada:</label>
+            <input type="date" id="fecha-regreso" name="fecha-regreso" required>
+
+            <label for="duracion">Duración Aproximada:</label>
+            <select id="duracion" name="duracion" required>
+                <option value="3-5-dias">3 a 5 días</option>
+                <option value="1-semana">1 semana</option>
+                <option value="2-semanas">2 semanas</option>
+                <option value="mas-2-semanas">Más de 2 semanas</option>
+            </select>
+
+            <label><input type="checkbox" name="flexibilidad"> Mis fechas son flexibles más o menos 3 días</label>
+
+            <label for="puerto-salida">Puerto de Salida Preferido:</label>
+            <select id="puerto-salida" name="puerto-salida" onchange="toggleOtroDestino(this)" required>
+                <option value="buenos-aires">Buenos Aires</option>
+                <option value="cordoba">Córdoba</option>
+                <option value="rosario">Rosario</option>
+                <option value="otro">Otro</option>
+            </select>
+            <input type="text" id="otro-destino" name="otro-puerto" placeholder="Especificar ciudad" style="display: none;">
+        </form>
+    </section>
+
+    <!-- Sección B - Datos de los Pasajeros -->
+    <section>
+        <h2>B - Datos de los Pasajeros</h2>
+        <form>
+            <label for="adultos">Cantidad de Adultos:</label>
+            <input type="number" id="adultos" name="adultos" min="1" max="10" required>
+
+            <label for="menores">Cantidad de Menores:</label>
+            <input type="number" id="menores" name="menores" min="0" max="8">
+
+            <label><input type="checkbox" name="adultos-mayores" onchange="toggleAdultosMayores(this)"> Viaja con Adultos Mayores</label>
+            <input type="number" id="cantidad-mayores" name="cantidad-mayores" min="1" max="10" placeholder="Cantidad" style="display: none;">
+
+            <h3>Datos del Pasajero Principal</h3>
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="documento">Número de Pasaporte o DNI:</label>
+            <input type="text" id="documento" name="documento" required>
+
+            <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
+
+            <label for="nacionalidad">Nacionalidad:</label>
+            <select id="nacionalidad" name="nacionalidad" required>
+                <option value="argentina">Argentina</option>
+                <option value="brasil">Brasil</option>
+                <option value="chile">Chile</option>
+                <option value="otro">Otro</option>
+            </select>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telefono">Teléfono de Contacto:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+
+            <label><input type="checkbox" name="necesidades-especiales" onchange="toggleNecesidadesEspeciales(this)"> Necesidades Especiales</label>
+            <textarea id="detalles-necesidades" name="detalles-necesidades" placeholder="Detalle sus necesidades" style="display: none;"></textarea>
+        </form>
+    </section>
+</body>
+</html>
