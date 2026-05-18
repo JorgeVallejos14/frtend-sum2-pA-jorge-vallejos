@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViajarYa</title>
+    <style>
+        /* Estilos básicos para la barra de navegación y la sección hero */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            background-color: #007BFF;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background-image: url('T:\frtend-sum2-pA-jorge-vallejos\assets\images\viajes.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+        .search-bar {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .search-bar input, .search-bar select, .search-bar button {
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+        .search-bar button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .search-bar button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav>
+        <div class="logo">ViajarYa</div>
+        <div class="links">
+            <a href="#">Inicio</a>
+            <a href="#">Destinos</a>
+            <a href="#">Paquetes</a>
+            <a href="#">Nosotros</a>
+            <a href="reserva.html">Reservar</a>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section class="hero">
+        <h1>ViajarYa</h1>
+        <p>Explora el mundo con nosotros. ¡Tu próxima aventura te espera!</p>
+        <div class="search-bar">
+            <input type="text" placeholder="Destino">
+            <input type="date" placeholder="Fecha de salida">
+            <select>
+                <option value="1">1 pasajero</option>
+                <option value="2">2 pasajeros</option>
+                <option value="3">3 pasajeros</option>
+                <option value="4">4 pasajeros</option>
+            </select>
+            <button onclick="location.href='reserva.html'">Buscar</button>
+        </div>
+    </section>
+</body>
+</html>
